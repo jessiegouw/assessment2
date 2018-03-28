@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/jessiegouw/assessment2/issues"
   },
-  "homepage": "https://github.com/jessiegouw/assessment2#readme"
+  "homepage": "https://github.com/jessiegouw/assessment2#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "npm": "^5.8.0"
+  }
 }
