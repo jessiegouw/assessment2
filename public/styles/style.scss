@@ -6,3 +6,10 @@ h1 a {
   text-decoration: none;
   color: rgba(179, 55, 113,1.0);
 }
+
+ul {
+  padding: 0;
+  li {
+    list-style-type: none;
+  }
+}
