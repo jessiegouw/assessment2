@@ -1,7 +1,7 @@
 {
   "name": "be-assessment-2",
   "version": "1.0.0",
-  "description": "",
+  "description": "NodeJS web app",
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
