@@ -7,6 +7,7 @@ var bodyParser = require('body-parser')
 
 express()
   .use(express.static('static'))
+  .use(express.static(__dirname + '/public'))
   .set('view engine', 'ejs')
   .set('views', 'view')
   .get('/', home)
