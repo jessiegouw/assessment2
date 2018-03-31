@@ -4,8 +4,9 @@
   "description": "NodeJS web app",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
-    "test": "mocha"
+    "start": "node index.js",
+    "test": "mocha",
+    "sass":"sass --watch public/styles/style.scss:public/styles/style.css"
   },
   "repository": {
     "type": "git",
