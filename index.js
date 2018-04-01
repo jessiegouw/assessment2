@@ -13,6 +13,7 @@ express()
   .get('/', home)
   .get('/login/', login)
   .get('/register/', register)
+  .use('/error/', notFound)
   .listen(8000, console.log('Ya servah runs 🔥'))
 
 function home(req, res) {
@@ -25,4 +26,8 @@ function login(req, res) {
 
 function register(req, res) {
   res.render('user/register')
+}
+
+function notFound(req, res) {
+  res.send('errors/error', 404)
 }
