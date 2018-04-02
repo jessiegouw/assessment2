@@ -6,6 +6,8 @@ var path = require('path')
 var bodyParser = require('body-parser')
 var mysql = require('mysql')
 
+require('dotenv').config()
+
 var connection = mysql.createConnection({
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
@@ -14,8 +16,6 @@ var connection = mysql.createConnection({
 })
 
 connection.connect()
-
-require('dotenv').config()
 
 express()
   .use(express.static('static'))
