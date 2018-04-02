@@ -15,7 +15,21 @@ var connection = mysql.createConnection({
   database: process.env.DB_NAME
 })
 
-connection.connect()
+connection.connect(function(err){
+  if(err){
+    console.log('Error connecting to Db')
+    return
+  }
+  console.log('Connection established')
+})
+
+connection.end(function(err) {
+  // The connection is terminated gracefully
+  // Ensures all previously enqueued queries are still
+  // before sending a COM_QUIT packet to the MySQL server.
+  if(err) console.log('err: ', err)
+  else console.log('Terminated done: ')
+})
 
 express()
   .use(express.static('static'))
