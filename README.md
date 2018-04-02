@@ -1,4 +1,4 @@
-# be-assessment2
+# be-assessment-2
 A web app made with Node and data in data database.
 In this web app people can share their cooking recipes with the community.
 
