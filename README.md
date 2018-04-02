@@ -15,3 +15,7 @@ In this web app people can share their cooking recipes with the community.
 * `npm start` -- Start the server (port:8000)
 * `npm test` -- Runs unit tests
 * `npm run sass` -- Open new tab in terminal to edit style.scss file
+
+## Sources
+* [ERROR 1819 mysql](https://www.youtube.com/watch?v=XGHZRC94-_M&feature=youtu.be)
+* [mysql-server example](https://github.com/cmda-be/course-17-18/tree/master/examples/mysql-server)
