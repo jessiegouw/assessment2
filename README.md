@@ -16,6 +16,9 @@ In this web app people can share their cooking recipes with the community.
 * `npm test` -- Runs unit tests
 * `npm run sass` -- Open new tab in terminal to edit style.scss file
 
+## Database structure
+![db_structure](https://github.com/jessiegouw/be-assessment-2/blob/master/db_structure.png)
+
 ## Sources
 * [ERROR 1819 mysql](https://www.youtube.com/watch?v=XGHZRC94-_M&feature=youtu.be)
 * [mysql-server example](https://github.com/cmda-be/course-17-18/tree/master/examples/mysql-server)
