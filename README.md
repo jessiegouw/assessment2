@@ -1,5 +1,5 @@
 # be-assessment-2
-A web app made with Node and data in data database.
+A web app made with Node and data in a mysql database.
 In this web app people can share their cooking recipes with the community.
 
 ## Functionalities
