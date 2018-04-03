@@ -7,9 +7,9 @@ In this web app people can share their cooking recipes with the community.
 * Delete account
 * Log in/out
 * Being logged in/out
-* Update profile, for example update profile picture
-* Being able to send messages to users and receive them
-* Being able to post messages on your own profile
+* Update profile, for example update profile picture or bio
+* Being able to react on recipes of other users
+* Being able to post recipes on your own profile
 
 ## Brief description of npm scripts
 * `npm start` -- Start the server (port:8000)
