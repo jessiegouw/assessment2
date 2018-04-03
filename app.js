@@ -2,7 +2,6 @@
 
 var express = require('express')
 var app = express()
-var path = require('path')
 var bodyParser = require('body-parser')
 var mysql = require('mysql')
 
@@ -52,6 +51,20 @@ function login(req, res) {
 
 function register(req, res) {
   res.render('user/register')
+}
+
+function addUser(req, res, next) {
+  if (err) {
+
+  } else {}
+  connection.query('INSERT INTO User SET? ', {
+    FirstName: req.body.FirstName,
+    LastName: req.body.LastName,
+    Username: req.body.Username,
+    Password: req.body.Password,
+    Description: req.body.Description,
+    Cover: req.file ? req.file.filename : null
+  })
 }
 
 function notFound(req, res) {
