@@ -2,7 +2,7 @@
   "name": "be-assessment-2",
   "version": "1.0.0",
   "description": "NodeJS web app",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "start": "node app.js",
     "test": "mocha",
