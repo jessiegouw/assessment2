@@ -1,0 +1,50 @@
+<%- include('../partials/head.ejs') %>
+
+<header>
+  <h1><a href="/">Cookingsite</a></h1>
+  <nav>
+    <ul>
+      <li><a href="login">Login</a></li>
+      <li><a href="register">Register</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+  <form action="login" method="post">
+
+    <fieldset>
+
+      <legend>Add recipe</legend>
+      <label>First name
+        <input name="FirstName" type="text" />
+      </label>
+      <label>Last name
+        <input name="LastName" type="text" />
+      </label>
+      <label>Username
+        <input name="UserName" type="text" />
+      </label>
+      <label>Password
+        <input name="Password" type="text" />
+      </label>
+      <label>Password verification
+        <input name="Password" type="text" />
+      </label>
+      <label>Detail
+        <textarea name="Details" placeholder="Tell something about yourself"></textarea>
+      </label>
+      <label>Profile picture
+        <input name="Cover" type="file" accept="image/*" />
+      </label>
+
+      <input type="submit" name="Register account" />
+
+    </fieldset>
+
+  </form>
+
+</main>
+
+<%- include('../partials/foot.ejs') %>
