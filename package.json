@@ -4,7 +4,7 @@
   "description": "NodeJS web app",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node app.js",
     "test": "mocha",
     "sass": "sass --watch public/styles/style.scss:public/styles/style.css"
   },
