@@ -14,8 +14,8 @@ var connection = mysql.createConnection({
   database: process.env.DB_NAME
 })
 
-connection.connect(function(err){
-  if(err){
+connection.connect(function(err) {
+  if(err) {
     console.log('Error connecting to Db')
     return
   }
@@ -55,16 +55,17 @@ function register(req, res) {
 
 function addUser(req, res, next) {
   if (err) {
-
-  } else {}
-  connection.query('INSERT INTO User SET? ', {
-    FirstName: req.body.FirstName,
-    LastName: req.body.LastName,
-    Username: req.body.Username,
-    Password: req.body.Password,
-    Description: req.body.Description,
-    Cover: req.file ? req.file.filename : null
-  })
+    next(err)
+  } else {
+    connection.query('INSERT INTO User SET? ', {
+      FirstName: req.body.FirstName,
+      LastName: req.body.LastName,
+      Username: req.body.Username,
+      Password: req.body.Password,
+      Description: req.body.Description,
+      Cover: req.file ? req.file.filename : null
+    })
+  }
 }
 
 function notFound(req, res) {
