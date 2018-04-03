@@ -31,3 +31,6 @@ npm install
 
 ### Troubleshooting
 * [`ERROR 1819 mysql`](https://www.youtube.com/watch?v=XGHZRC94-_M&feature=youtu.be)
+
+## License
+[MIT](https://github.com/jessiegouw/package/blob/master/LICENSE) © 2018 [Jessie Gouw](https://github.com/jessiegouw)
