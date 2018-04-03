@@ -2,6 +2,12 @@
 A web app made with Node and data in a mysql database.
 In this web app people can share their cooking recipes with the community.
 
+## Install
+```shell
+git clone git@github.com:jessiegouw/be-assessment-2
+npm install
+```
+
 ## Functionalities
 * Sign up
 * Delete account
@@ -12,7 +18,8 @@ In this web app people can share their cooking recipes with the community.
 * Being able to post recipes on your own profile
 
 ## Brief description of npm scripts
-* `npm start` -- Start the server (port:8000)
+* `npm start` -- Starts the server (port:8000)
+* `npm run watch` -- Starts the server with Nodemon
 * `npm test` -- Runs unit tests
 * `npm run sass` -- Open new tab in terminal to edit style.scss file
 
