@@ -38,6 +38,7 @@ express()
   .get('/', home)
   .get('/login/', login)
   .get('/register/', register)
+  .post('/', addUser)
   .use('/error/', notFound)
   .listen(8000, console.log('Ya servah runs 🔥'))
 
@@ -64,7 +65,7 @@ function addUser(req, res, next) {
       Password: req.body.Password,
       Description: req.body.Description,
       Cover: req.file ? req.file.filename : null
-    })
+    }, done)
   }
 }
 
