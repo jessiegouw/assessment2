@@ -1,5 +1,6 @@
 body {
   font-family: 'Roboto';
+  max-width: 80vw
 }
 
 h1 a {
@@ -11,5 +12,24 @@ ul {
   padding: 0;
   li {
     list-style-type: none;
+  }
+}
+
+form {
+  fieldset {
+    label {
+    }
+    input {
+      margin: 0 0 1em 0;
+      display: flex;
+      padding: 0.7em;
+      font-size: 12pt;
+    }
+    textarea {
+      margin: 0 0 2em 0;
+      display: flex;
+      width: 20em;
+      height: 7em;
+    }
   }
 }

@@ -1,5 +1,6 @@
 body {
-  font-family: 'Roboto'; }
+  font-family: 'Roboto';
+  max-width: 80vw; }
 
 h1 a {
   text-decoration: none;
@@ -9,5 +10,16 @@ ul {
   padding: 0; }
   ul li {
     list-style-type: none; }
+
+form fieldset input {
+  margin: 0 0 1em 0;
+  display: flex;
+  padding: 0.7em;
+  font-size: 12pt; }
+form fieldset textarea {
+  margin: 0 0 2em 0;
+  display: flex;
+  width: 20em;
+  height: 7em; }
 
 /*# sourceMappingURL=style.css.map */
