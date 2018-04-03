@@ -1,15 +1,32 @@
 body {
   font-family: 'Roboto';
-  max-width: 80vw; }
+  max-width: 80vw;
+  margin: 0 auto; }
 
 h1 a {
   text-decoration: none;
   color: #b33771; }
 
-ul {
-  padding: 0; }
-  ul li {
-    list-style-type: none; }
+header {
+  display: flex; }
+
+nav {
+  position: absolute;
+  right: 10vw; }
+  nav ul {
+    display: flex;
+    padding: 0; }
+    nav ul li {
+      list-style-type: none;
+      margin: 1.25em 1em 0 0; }
+    nav ul a {
+      font-weight: bold;
+      color: deeppink;
+      text-decoration: none;
+      transition-duration: 400ms; }
+      nav ul a:hover {
+        transform: scaleX(5);
+        text-decoration: underline; }
 
 form fieldset input {
   margin: 0 0 1em 0;

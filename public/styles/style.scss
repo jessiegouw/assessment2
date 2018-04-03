@@ -1,6 +1,7 @@
 body {
   font-family: 'Roboto';
-  max-width: 80vw
+  max-width: 80vw;
+  margin: 0 auto;
 }
 
 h1 a {
@@ -8,10 +9,30 @@ h1 a {
   color: rgba(179, 55, 113,1.0);
 }
 
-ul {
-  padding: 0;
-  li {
-    list-style-type: none;
+header {
+  display: flex;
+}
+
+nav {
+  position: absolute;
+  right: 10vw;
+  ul {
+    display: flex;
+    padding: 0;
+    li {
+      list-style-type: none;
+      margin: 1.25em 1em 0 0;
+    }
+    a {
+      font-weight: bold;
+      color: deeppink;
+      text-decoration: none;
+      transition-duration: 400ms;
+      &:hover {
+        transform: scaleX(5);
+        text-decoration: underline;
+      }
+    }
   }
 }
 
