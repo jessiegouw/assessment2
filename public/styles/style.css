@@ -1,9 +1,10 @@
 body {
-  font-family: 'Roboto';
+  font-family: 'Open Sans', sans-serif;
   max-width: 80vw;
   margin: 0 auto; }
 
 h1 a {
+  font-family: 'Pacifico', sans-serif;
   text-decoration: none;
   color: #b33771; }
 
@@ -35,8 +36,6 @@ form fieldset input {
   font-size: 12pt; }
 form fieldset textarea {
   margin: 0 0 2em 0;
-  display: flex;
-  width: 20em;
-  height: 7em; }
+  display: flex; }
 
 /*# sourceMappingURL=style.css.map */
