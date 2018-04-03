@@ -4,7 +4,7 @@
   "description": "NodeJS web app",
   "main": "app.js",
   "scripts": {
-    "watch":"nodemon app.js",
+    "watch": "nodemon app.js",
     "start": "node app.js",
     "test": "mocha",
     "sass": "sass --watch public/styles/style.scss:public/styles/style.css"
@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/jessiegouw/assessment2#readme",
   "dependencies": {
+    "argon2": "^0.17.3",
     "body-parser": "^1.18.2",
     "dotenv": "^5.0.1",
     "ejs": "^2.5.8",
