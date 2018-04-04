@@ -11,15 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jessiegouw/assessment2.git"
+    "url": "git+https://github.com/jessiegouw/be-assessment-2.git"
   },
   "keywords": [],
   "author": "Jessie Gouw",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jessiegouw/assessment2/issues"
+    "url": "https://github.com/jessiegouw/be-assessment-2/issues"
   },
-  "homepage": "https://github.com/jessiegouw/assessment2#readme",
+  "homepage": "https://github.com/jessiegouw/be-assessment-2#readme",
   "dependencies": {
     "argon2": "^0.17.3",
     "body-parser": "^1.18.2",
