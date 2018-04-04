@@ -9,13 +9,13 @@ npm install
 ```
 
 ## Checklist
-- [] Sign up
-- [] Delete account
-- [] Log in/out
-- [] Being logged in/out
-- [] Update profile, for example update profile picture or bio
-- [] Being able to react on recipes of other users
-- [] Being able to post recipes on your own profile
+- [ ] Sign up
+- [ ] Delete account
+- [ ] Log in/out
+- [ ] Being logged in/out
+- [ ] Update profile, for example update profile picture or bio
+- [ ] Being able to react on recipes of other users
+- [ ] Being able to post recipes on your own profile
 
 ## Brief description of npm scripts
 * `npm start` -- Starts the server (port:8000)
