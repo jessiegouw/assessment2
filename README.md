@@ -3,10 +3,18 @@ A web app made with Node and data in a mysql database.
 In this web app people can share their cooking recipes with the community.
 
 ## Install
+Type in these commands in your terminal.
 ```shell
 git clone git@github.com:jessiegouw/be-assessment-2
 npm install
 ```
+
+## What I used
+<!-- * [`Express`]()
+* [`s`]()
+* [`s`]()
+* [`s`]()
+* [`s`]() -->
 
 ## Checklist
 - [ ] Sign up
