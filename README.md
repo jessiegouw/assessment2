@@ -30,6 +30,7 @@ npm install
 * [`mysql-server example`](https://github.com/cmda-be/course-17-18/tree/master/examples/mysql-server)
 
 ### Troubleshooting
+* [`MySQL commands`](https://gist.github.com/hofmannsven/9164408)
 * [`ERROR 1819 mysql`](https://www.youtube.com/watch?v=XGHZRC94-_M&feature=youtu.be)
 
 ## License
