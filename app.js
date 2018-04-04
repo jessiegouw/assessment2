@@ -4,6 +4,8 @@ var express = require('express')
 var app = express()
 var bodyParser = require('body-parser')
 var mysql = require('mysql')
+var multer = require('multer')
+const argon2 = require('argon2')
 
 require('dotenv').config()
 
@@ -22,23 +24,18 @@ connection.connect(function(err) {
   console.log('Connection established')
 })
 
-connection.end(function(err) {
-  // The connection is terminated gracefully
-  // Ensures all previously enqueued queries are still
-  // before sending a COM_QUIT packet to the MySQL server.
-  if(err) console.log('err: ', err)
-  else console.log('Terminated done: ')
-})
+var upload = multer({dest: 'static/upload/'})
 
 express()
   .use(express.static('static'))
   .use(express.static(__dirname + '/public'))
+  .use(bodyParser.urlencoded({extended: true}))
   .set('view engine', 'ejs')
   .set('views', 'view')
   .get('/', home)
   .get('/login/', login)
-  .get('/register/', register)
-  .post('/', addUser)
+  .get('/register', register)
+  .post('/', upload.single('cover'), addUser)
   .use('/error/', notFound)
   .listen(8000, console.log('Ya servah runs 🔥'))
 
@@ -55,18 +52,34 @@ function register(req, res) {
 }
 
 function addUser(req, res, next) {
-  if (err) {
-    next(err)
-  } else {
-    connection.query('INSERT INTO User SET? ', {
-      FirstName: req.body.FirstName,
-      LastName: req.body.LastName,
-      Username: req.body.Username,
-      Password: req.body.Password,
-      Description: req.body.Description,
-      Cover: req.file ? req.file.filename : null
-    }, done)
+  argon2.hash('Password').then(hash => {
+    Password: req.body.Password
+  }).catch(err => {
+    return
+  })
+
+  connection.query('INSERT INTO User SET ?', {
+    FirstName: req.body.FirstName,
+    LastName: req.body.LastName,
+    Username: req.body.Username,
+    Password: req.body.Password,
+    Details: req.body.Details,
+    Cover: req.file ? req.file.filename : null
+  }, done)
+
+  if (req.body.Password != req.body.Password2) {
+    res.send('Your password does not match')
+    return
   }
+
+  function done(err, data) {
+    if (err) {
+      next(err)
+    } else {
+      res.redirect('/' + data.insertId)
+    }
+  }
+  connection.end()
 }
 
 function notFound(req, res) {
