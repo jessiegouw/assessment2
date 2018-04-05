@@ -52,7 +52,11 @@ function registerForm(req, res) {
 }
 
 function register(req, res, next) {
-
+  var FirstName = req.body.FirstName
+  var LastName = req.body.LastName
+  var Username = req.body.Username
+  var Password = req.body.Password
+  var Details = req.body.Details
 }
 
 function notFound(req, res) {
