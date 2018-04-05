@@ -5,7 +5,7 @@ var app = express()
 var bodyParser = require('body-parser')
 var mysql = require('mysql')
 var multer = require('multer')
-const argon2 = require('argon2')
+var argon2 = require('argon2')
 
 require('dotenv').config()
 
@@ -52,8 +52,7 @@ function register(req, res) {
 }
 
 function addUser(req, res, next) {
-  argon2.hash('Password').then(hash => {
-    Password: req.body.Password
+  Password: argon2.hash('Password').then(hash => {
   }).catch(err => {
     return
   })
