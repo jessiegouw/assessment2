@@ -34,8 +34,8 @@ express()
   .set('views', 'view')
   .get('/', home)
   .get('/login/', login)
-  .get('/register', register)
-  .post('/', upload.single('cover'), addUser)
+  .get('/register', registerForm)
+  .post('/register', register)
   .use('/error/', notFound)
   .listen(8000, console.log('Ya servah runs 🔥'))
 
@@ -47,38 +47,12 @@ function login(req, res) {
   res.render('user/login')
 }
 
-function register(req, res) {
+function registerForm(req, res) {
   res.render('user/register')
 }
 
-function addUser(req, res, next) {
-  Password: argon2.hash('Password').then(hash => {
-  }).catch(err => {
-    return
-  })
+function register(req, res, next) {
 
-  connection.query('INSERT INTO User SET ?', {
-    FirstName: req.body.FirstName,
-    LastName: req.body.LastName,
-    Username: req.body.Username,
-    Password: req.body.Password,
-    Details: req.body.Details,
-    Cover: req.file ? req.file.filename : null
-  }, done)
-
-  if (req.body.Password != req.body.Password2) {
-    res.send('Your password does not match')
-    return
-  }
-
-  function done(err, data) {
-    if (err) {
-      next(err)
-    } else {
-      res.redirect('/' + data.insertId)
-    }
-  }
-  connection.end()
 }
 
 function notFound(req, res) {
