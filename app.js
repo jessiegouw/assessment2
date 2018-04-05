@@ -57,6 +57,12 @@ function register(req, res, next) {
   var Username = req.body.Username
   var Password = req.body.Password
   var Details = req.body.Details
+
+  if (req.body.Password != req.body.Password2) {
+    res.send('Your password does not match')
+    return
+  }
+
 }
 
 function notFound(req, res) {
