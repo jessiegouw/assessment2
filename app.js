@@ -63,6 +63,24 @@ function register(req, res, next) {
     return
   }
 
+  function addUser(addUser) {
+    connection.query('INSERT INTO User SET ?', {
+      FirstName: FirstName,
+      LastName: LastName,
+      Username: Username,
+      Password: Password,
+      Details: Details
+    }, errorCheck)
+
+    function errorCheck(err) {
+      if (err) {
+        next(err)
+      } else {
+        // User is now registered
+        res.redirect('/')
+      }
+    }
+  }
 }
 
 function notFound(req, res) {
