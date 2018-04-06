@@ -85,7 +85,7 @@ function register(req, res, next) {
         next(err)
       } else {
         // User is now registered
-        res.redirect('/')
+        res.redirect('/login')
       }
     }
   }
@@ -96,7 +96,7 @@ function loginForm(req, res) {
 }
 
 function login(req, res) {
-  
+
 }
 
 function profile(req, res) {
