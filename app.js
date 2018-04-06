@@ -64,7 +64,7 @@ function register(req, res, next) {
     if (err) {
       next(err)
     } else if (data.length === 0) {
-      argon2.hash(Password).then(onhash, next)
+      argon2.hash(Password).then(addUser, next)
     } else {
       res.status(409).send('Username already in use')
     }
@@ -75,7 +75,7 @@ function register(req, res, next) {
     return
   }
 
-  function addUser(addUser) {
+  function addUser(Password) {
     connection.query('INSERT INTO User SET ?', {
       FirstName: FirstName,
       LastName: LastName,
@@ -93,6 +93,10 @@ function register(req, res, next) {
       }
     }
   }
+}
+
+function profile(req, res) {
+  res.render('user/profile')
 }
 
 function notFound(req, res) {
