@@ -36,6 +36,8 @@ npm install
 
 ## Sources
 * [`mysql-server example`](https://github.com/cmda-be/course-17-18/tree/master/examples/mysql-server)
+* [`Auth Server`](https://github.com/cmda-be/course-17-18/tree/master/examples/auth-server)
+* [`How do Express.js Sessions work?`](https://nodewebapps.com/2017/06/18/how-do-nodejs-sessions-work/)
 
 ### Troubleshooting
 * [`MySQL commands`](https://gist.github.com/hofmannsven/9164408)
