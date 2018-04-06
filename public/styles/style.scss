@@ -26,7 +26,7 @@ nav {
     }
     a {
       font-weight: bold;
-      color: deeppink;
+      color: rgba(252, 66, 123,1.0);
       text-decoration: none;
       transition-duration: 400ms;
       &:hover {
@@ -44,6 +44,7 @@ form {
   fieldset {
     border: none;
     legend {
+      padding-left: 0;
       font-weight: bold;
       color: rgba(59, 59, 152,1.0);
       margin-bottom: 1em;
