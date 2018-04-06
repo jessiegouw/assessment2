@@ -58,6 +58,18 @@ function register(req, res, next) {
   var Password = req.body.Password
   var Details = req.body.Details
 
+  connection.query('SELECT * FROM User WHERE Username = ?', Username, done)
+
+  function done(err, data) {
+    if (err) {
+      next(err)
+    } else if (data.length === 0) {
+      argon2.hash(Password).then(onhash, next)
+    } else {
+      res.status(409).send('Username already in use')
+    }
+  }
+
   if (req.body.Password != req.body.Password2) {
     res.send('Your password does not match')
     return
