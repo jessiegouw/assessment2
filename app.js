@@ -33,7 +33,7 @@ express()
   .set('view engine', 'ejs')
   .set('views', 'view')
   .get('/', home)
-  .get('/login/', login)
+  .get('/login', loginForm)
   .get('/register', registerForm)
   .post('/register', register)
   .use('/error/', notFound)
@@ -41,10 +41,6 @@ express()
 
 function home(req, res) {
   res.render('index')
-}
-
-function login(req, res) {
-  res.render('user/login')
 }
 
 function registerForm(req, res) {
@@ -93,6 +89,14 @@ function register(req, res, next) {
       }
     }
   }
+}
+
+function loginForm(req, res) {
+  res.render('user/login')
+}
+
+function login(req, res) {
+  
 }
 
 function profile(req, res) {
