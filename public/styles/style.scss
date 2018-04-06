@@ -1,6 +1,6 @@
 body {
   font-family: 'Open Sans', sans-serif;
-  max-width: 80vw;
+  max-width: 85vw;
   margin: 0 auto;
 }
 
@@ -38,18 +38,44 @@ nav {
 }
 
 form {
+  padding: 1em;
+  border: rgba(206, 214, 224,1.0) solid 0.001em;
+  max-width: 25em;
   fieldset {
+    border: none;
+    legend {
+      font-weight: bold;
+      color: rgba(59, 59, 152,1.0);
+      margin-bottom: 1em;
+    }
     label {
     }
-    input {
+    input, textarea {
       margin: 0 0 1em 0;
       display: flex;
       padding: 0.7em;
       font-size: 12pt;
+      transition-duration: 400ms;
+      border: rgba(206, 214, 224,1.0) solid 0.001em;
+      &:focus {
+        outline: none;
+        border: deeppink solid 0.001em;
+      }
     }
-    textarea {
+    input[type=file] {
       margin: 0 0 2em 0;
+      border: rgba(206, 214, 224,1.0) solid 0.001em;
       display: flex;
+      max-width: 12em;
+    }
+    input[type=submit] {
+      color: white;
+      background-color: rgba(252, 66, 123,1.0);
+      border: none;
+      &:hover {
+        background-color: rgba(253, 114, 114,1.0);
+        cursor: pointer;
+      }
     }
   }
 }

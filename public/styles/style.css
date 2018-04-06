@@ -1,6 +1,6 @@
 body {
   font-family: 'Open Sans', sans-serif;
-  max-width: 80vw;
+  max-width: 85vw;
   margin: 0 auto; }
 
 h1 a {
@@ -29,13 +29,37 @@ nav {
         transform: scaleX(5);
         text-decoration: underline; }
 
-form fieldset input {
-  margin: 0 0 1em 0;
-  display: flex;
-  padding: 0.7em;
-  font-size: 12pt; }
-form fieldset textarea {
-  margin: 0 0 2em 0;
-  display: flex; }
+form {
+  padding: 1em;
+  border: #ced6e0 solid 0.001em;
+  max-width: 25em; }
+  form fieldset {
+    border: none; }
+    form fieldset legend {
+      font-weight: bold;
+      color: #3b3b98;
+      margin-bottom: 1em; }
+    form fieldset input, form fieldset textarea {
+      margin: 0 0 1em 0;
+      display: flex;
+      padding: 0.7em;
+      font-size: 12pt;
+      transition-duration: 400ms;
+      border: #ced6e0 solid 0.001em; }
+      form fieldset input:focus, form fieldset textarea:focus {
+        outline: none;
+        border: deeppink solid 0.001em; }
+    form fieldset input[type=file] {
+      margin: 0 0 2em 0;
+      border: #ced6e0 solid 0.001em;
+      display: flex;
+      max-width: 12em; }
+    form fieldset input[type=submit] {
+      color: white;
+      background-color: #fc427b;
+      border: none; }
+      form fieldset input[type=submit]:hover {
+        background-color: #fd7272;
+        cursor: pointer; }
 
 /*# sourceMappingURL=style.css.map */
