@@ -37,6 +37,13 @@ express()
   .get('/register', registerForm)
   .post('/register', register)
   .get('/login', loginForm)
+  .set('trust proxy', 1) // trust first proxy
+  .use(session({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: true }
+  })) 
   .use('/error/', notFound)
   .listen(8000, console.log('Ya servah runs 🔥'))
 
