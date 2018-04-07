@@ -2,6 +2,7 @@
 
 var express = require('express')
 var app = express()
+var session = require('express-session')
 var bodyParser = require('body-parser')
 var mysql = require('mysql')
 var multer = require('multer')
@@ -33,9 +34,9 @@ express()
   .set('view engine', 'ejs')
   .set('views', 'view')
   .get('/', home)
-  .get('/login', loginForm)
   .get('/register', registerForm)
   .post('/register', register)
+  .get('/login', loginForm)
   .use('/error/', notFound)
   .listen(8000, console.log('Ya servah runs 🔥'))
 
