@@ -96,7 +96,8 @@ function loginForm(req, res) {
 }
 
 function login(req, res) {
-
+  var Username = req.body.Username
+  var Password = req.body.Password
 }
 
 function profile(req, res) {
