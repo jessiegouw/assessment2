@@ -43,7 +43,7 @@ express()
     resave: false,
     saveUninitialized: true,
     cookie: { secure: true }
-  })) 
+  }))
   .use('/error/', notFound)
   .listen(8000, console.log('Ya servah runs 🔥'))
 
