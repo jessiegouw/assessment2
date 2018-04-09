@@ -37,6 +37,8 @@ express()
   .get('/register', registerForm)
   .post('/register', register)
   .get('/login', loginForm)
+  .post('/recipes', login)
+  .get('/recipes', recipes)
   .set('trust proxy', 1) // trust first proxy
   .use(session({
     secret: 'keyboard cat',
@@ -103,9 +105,36 @@ function loginForm(req, res) {
   res.render('user/login')
 }
 
-function login(req, res) {
+function login(req, res, next) {
   var Username = req.body.Username
   var Password = req.body.Password
+
+  connection.query('SELECT * FROM User WHERE Username = ?', Username, done)
+
+  function done(err, data) {
+  var User = data && data[0]
+
+    if (err) {
+      next(err)
+    } else if (User) {
+      argon2.verify(User.hash, Password).then(onverify, next)
+    } else {
+      res.status(401).send('Username does not exist')
+    }
+
+    function onverify(match) {
+      if (match) {
+        req.session.User = {Username: User.Username};
+        res.redirect('user/recipes')
+      } else {
+        res.status(401).send('Password incorrect')
+      }
+    }
+  }
+}
+
+function recipes(req, res) {
+  res.render('user/recipes')
 }
 
 function profile(req, res) {
