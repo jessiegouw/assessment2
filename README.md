@@ -17,7 +17,7 @@ npm install
 * [`s`]() -->
 
 ## Checklist
-- [ ] Sign up
+- [x] Sign up
 - [ ] Delete account
 - [ ] Log in/out
 - [ ] Being logged in/out
