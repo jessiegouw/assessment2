@@ -1,4 +1,4 @@
-'use strict'
+// 'use semi-strict'
 
 var express = require('express')
 var app = express()
@@ -46,7 +46,7 @@ express()
     saveUninitialized: true,
     cookie: { secure: true }
   }))
-  .use('/error/', notFound)
+  .use(notFound)
   .listen(8000, console.log('Ya servah runs 🔥'))
 
 function home(req, res) {
@@ -108,11 +108,11 @@ function loginForm(req, res) {
 function login(req, res, next) {
   var Username = req.body.Username
   var Password = req.body.Password
-
+  
   connection.query('SELECT * FROM User WHERE Username = ?', Username, done)
 
   function done(err, data) {
-  var User = data && data[0]
+    var User = data && data[0]
 
     if (err) {
       next(err)
@@ -126,6 +126,7 @@ function login(req, res, next) {
       if (match) {
         req.session.User = {Username: User.Username};
         res.redirect('user/recipes')
+        console.log(data)
       } else {
         res.status(401).send('Password incorrect')
       }
@@ -133,12 +134,16 @@ function login(req, res, next) {
   }
 }
 
-function recipes(req, res) {
-  res.render('user/recipes')
-}
+function recipes(req, res, next) {
+  connection.query('SELECT * FROM recipe', done)
 
-function profile(req, res) {
-  res.render('user/profile')
+  function done(err, data) {
+    if (err) {
+      next(err)
+    } else {
+      res.render('user/recipes', {data: data})
+    }
+  }
 }
 
 function notFound(req, res) {
