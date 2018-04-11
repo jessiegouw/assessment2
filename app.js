@@ -39,6 +39,7 @@ express()
   .get('/login', loginForm)
   .post('/recipes', login)
   .get('/recipes', recipes)
+  .get('/:id', recipe)
   .set('trust proxy', 1) // trust first proxy
   .use(session({
     secret: 'keyboard cat',
@@ -108,7 +109,7 @@ function loginForm(req, res) {
 function login(req, res, next) {
   var Username = req.body.Username
   var Password = req.body.Password
-  
+
   connection.query('SELECT * FROM User WHERE Username = ?', Username, done)
 
   function done(err, data) {
@@ -142,6 +143,22 @@ function recipes(req, res, next) {
       next(err)
     } else {
       res.render('user/recipes', {data: data})
+    }
+  }
+}
+
+function recipe(req, res, next) {
+  var id = req.params.id
+
+  connection.query('SELECT * FROM recipe WHERE id = ?', id, done)
+
+  function done(err, data) {
+    if (err) {
+      next(err)
+    } else if (data.length === 0) {
+      next()
+    } else {
+      res.render('user/detail', {data: data[0], User: req.session.User})
     }
   }
 }
