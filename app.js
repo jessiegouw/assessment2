@@ -164,5 +164,5 @@ function recipe(req, res, next) {
 }
 
 function notFound(req, res) {
-  res.send('errors/error', 404)
+  res.status(404).render('errors/error')
 }
