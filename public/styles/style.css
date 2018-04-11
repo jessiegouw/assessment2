@@ -4,9 +4,9 @@ body {
   margin: 0 auto; }
 
 h1 a {
-  font-family: 'Pacifico', sans-serif;
+  font-family: 'Chalkduster', sans-serif;
   text-decoration: none;
-  color: #b33771; }
+  color: #05c46b; }
 
 header {
   display: flex; }
@@ -22,7 +22,7 @@ nav {
       margin: 1.25em 1em 0 0; }
     nav ul a {
       font-weight: bold;
-      color: #fc427b;
+      color: black;
       text-decoration: none;
       transition-duration: 400ms; }
       nav ul a:hover {
@@ -62,5 +62,19 @@ form {
       form fieldset input[type=submit]:hover {
         background-color: #fd7272;
         cursor: pointer; }
+
+section {
+  margin: 2em 0 2em 0;
+  background-color: #FBEDAC;
+  padding: 1em;
+  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12); }
+  section h2 {
+    font-family: 'Chalkduster', sans-serif;
+    margin: 0.3em 0 0.1em 0; }
+  section a {
+    color: black;
+    text-decoration: none; }
+  section p {
+    margin: 0 0 0.1em 0; }
 
 /*# sourceMappingURL=style.css.map */
