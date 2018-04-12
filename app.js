@@ -125,7 +125,7 @@ function login(req, res, next) {
 
     function onverify(match) {
       if (match) {
-        req.session.User = {Username: User.Username};
+        req.session.User = {Username: User.Username}
         res.redirect('user/recipes')
       } else {
         res.status(401).send('Password incorrect')
@@ -136,9 +136,9 @@ function login(req, res, next) {
 
 function logout(req, res) {
   // Destroy the session
-  req.session.destroy();
+  req.session.destroy()
   // Redirect to index page
-  res.redirect('/');
+  res.redirect('/')
 }
 
 function recipes(req, res, next) {
