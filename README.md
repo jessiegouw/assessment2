@@ -3,12 +3,74 @@ A web app made with Node and data in a mysql database.
 In this web app people can share their cooking recipes with the community.
 
 ## Install
-Type in these commands in your terminal.
+First of all, type in these commands in your terminal to get the project.
 ```shell
 git clone git@github.com:jessiegouw/be-assessment-2
 npm install
 ```
 
+The next thing you want do is log in to mysql:
+>If access is denied, login to your root account. From there on you can change priviliges for users.
+
+```shell
+mysql -u [username] -p
+# Enter your password
+```
+
+…and run the following SQL to set up a database and create a user table:
+```shell
+CREATE TABLE IF NOT EXISTS User (
+  ID INT NOT NULL AUTO_INCREMENT,
+  FirstName TEXT CHARACTER SET utf8,
+  LastName TEXT CHARACTER SET utf8,
+  Username TEXT CHARACTER SET utf8,
+  Password TEXT CHARACTER SET utf8,
+  Details TEXT CHARACTER SET utf8,
+  PRIMARY KEY (id)
+);
+```
+
+For the recipes you also need a database, run this SQL to create a recipe table:
+```shell
+CREATE TABLE IF NOT EXISTS recipe (
+  ID INT NOT NULL AUTO_INCREMENT,
+  Name TEXT CHARACTER SET utf8,
+  Description TEXT CHARACTER SET utf8,
+  Ingredients TEXT CHARACTER SET utf8,
+  Instructions TEXT CHARACTER SET utf8,
+  cover TEXT CHARACTER SET utf8,
+  PRIMARY KEY (id)
+);
+
+-- Add some recipes by running these SQLs:
+INSERT INTO recipe (Name, Description, Ingredients, Instructions) VALUES (
+  'Proteine wrap',
+  'This is a little wrap, you could eat it as a post workout meal.',
+  'Wholewheat wraps, grilled chicken, cucumber, tomatoes, hummus, red chilli peppers and black beans.',
+  'Warm up the wholewheat wraps for 10 seconds and then throw all of the ingredients in it. Enjoy!'
+);
+
+INSERT INTO recipe (Name, Description, Ingredients, Instructions) VALUES (
+  'Gado Gado',
+  'Indonesian comfort meal',
+  'Potatoes, bean sprouts, green beans, spinach, tofu, eggs, fried onions, sambal oelek, peanutbutter, bumbu gado gado',
+  'Gado Gado means mix mix and is typical Indonesian streetfood. Boil all the vegetables and the egg and put them on a plate. For the sauce you mix all the leftover ingredients together and you are good to go!'
+);
+```
+
+Almost there, now you need to create a `.env` file with the following info (Replace the values with your own values):
+
+```env
+DB_HOST=localhost
+DB_USER=myusername
+DB_NAME=mydatabase
+DB_PASSWORD=mypassword
+```
+
+Last step is to start the server:
+```shell
+npm start
+```
 ## What I used
 <!-- * [`Express`]()
 * [`s`]()
