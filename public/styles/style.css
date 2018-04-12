@@ -63,6 +63,13 @@ form {
         background-color: #fd7272;
         cursor: pointer; }
 
+.account {
+  text-decoration: none;
+  font-weight: bold;
+  color: black; }
+  .account:hover {
+    text-decoration: underline; }
+
 section {
   margin: 2em 0 2em 0;
   background-color: #FBEDAC;
