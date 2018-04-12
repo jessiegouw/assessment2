@@ -38,6 +38,7 @@ express()
   .post('/register', register)
   .get('/login', loginForm)
   .post('/recipes', login)
+  .get('/log-out', logout)
   .get('/recipes', recipes)
   .get('/:id', recipe)
   .set('trust proxy', 1) // trust first proxy
@@ -161,6 +162,16 @@ function recipe(req, res, next) {
       res.render('user/detail', {data: data[0], User: req.session.User})
     }
   }
+}
+
+function logout(req, res, next) {
+  req.session.destroy(function (err) {
+    if (err) {
+      next(err)
+    } else {
+      res.redirect('/')
+    }
+  })
 }
 
 function notFound(req, res) {
