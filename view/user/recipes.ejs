@@ -1,20 +1,26 @@
 <%- include('../partials/head.ejs') %>
+<title>Cookingsite - Recipes</title>
 
 <header>
   <h1><a href="/recipes">Cookingsite</a></h1>
   <nav>
     <ul>
       <li><a href="/profile">My profile</a></li>
-      <li><a href="/">Log out</a></li>
+      <li><a href="/log-out">Log out</a></li>
     </ul>
   </nav>
 </header>
 
 <main>
-  
+
+  <h1>Recipes</h1>
+  <footer>Click the title to see recipe.</footer>
+
   <% for (var index = 0; index < data.length; index++) { %>
-  <h2><a href="/<%= data[index].id %>"><%= data[index].Name %></a></h2>
-  <p><%= data[index].Description %></p>
+  <section>
+    <h2><a href="/<%= data[index].id %>"><%= data[index].Name %></a></h2>
+    <p><%= data[index].Description %></p>
+  </section>
   <% } %>
 
 </main>
