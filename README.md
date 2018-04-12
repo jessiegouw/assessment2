@@ -1,4 +1,5 @@
 # be-assessment-2
+![cover](https://github.com/jessiegouw/be-assessment-2/blob/master/cookingsite.png)
 A web app made with Node and data in a mysql database.
 In this web app people can share their cooking recipes with the community.
 
