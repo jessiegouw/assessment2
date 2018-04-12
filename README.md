@@ -80,6 +80,10 @@ npm start
 * [`argon2`](https://www.npmjs.com/package/argon2)
 * [`multer`](https://www.npmjs.com/package/multer)
 
+The reason that I used [`Express`](https://www.npmjs.com/package/express) as a framework is because it has the biggest community. When you are troubleshooting, chances are big that alot of other people have stumbled on the same problem and probably have solutions for it.
+
+The reason that I used MySQL as an open source database manager is because I feel comfortable with the way it works. Though, a big con of MySQL is that it's owned by Oracle instead of a community. This worries some developers because the big company who owns MySQL does not accept patches which is not making things easier.
+
 ## Checklist
 - [x] Sign up
 - [ ] Delete account
