@@ -73,11 +73,12 @@ Last step is to start the server:
 npm start
 ```
 ## What I used
-<!-- * [`Express`]()
-* [`s`]()
-* [`s`]()
-* [`s`]()
-* [`s`]() -->
+* [`Express`](https://www.npmjs.com/package/express)
+* [`Express-session`](https://www.npmjs.com/package/express-session)
+* [`body-parser`](https://www.npmjs.com/package/body-parser)
+* [`mysql`](https://www.npmjs.com/package/mysql)
+* [`argon2`](https://www.npmjs.com/package/argon2)
+* [`multer`](https://www.npmjs.com/package/multer)
 
 ## Checklist
 - [x] Sign up
