@@ -6,6 +6,7 @@ In this web app people can share their cooking recipes with the community.
 ## Install
 First of all, type in these commands in your terminal to get the project.
 ```shell
+cd be-assessment-2
 git clone git@github.com:jessiegouw/be-assessment-2
 npm install
 ```
