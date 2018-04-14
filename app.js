@@ -32,6 +32,12 @@ express()
   .use(bodyParser.urlencoded({extended: true}))
   .set('view engine', 'ejs')
   .set('views', 'view')
+  .use(session({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: true }
+  }))
   .get('/', home)
   .get('/register', registerForm)
   .post('/register', register)
@@ -40,13 +46,8 @@ express()
   .get('/logout', logout)
   .get('/recipes', recipes)
   .get('/:id', recipe)
+  .get('/profile', profile)
   .set('trust proxy', 1) // trust first proxy
-  .use(session({
-    secret: 'keyboard cat',
-    resave: false,
-    saveUninitialized: true,
-    cookie: { secure: true }
-  }))
   .use(notFound)
   .listen(8000, console.log('Ya servah runs 🔥'))
 
@@ -118,15 +119,16 @@ function login(req, res, next) {
     if (err) {
       next(err)
     } else if (User) {
-      argon2.verify(User.hash, Password).then(onverify, next)
+      console.log(User)
+      argon2.verify(User.Password, Password).then(onverify, next)
     } else {
       res.status(401).send('Username does not exist')
     }
 
     function onverify(match) {
       if (match) {
-        req.session.User = {Username: User.Username}
-        res.redirect('user/recipes')
+        req.session.user = {Username: User.Username}
+        res.redirect('recipes')
       } else {
         res.status(401).send('Password incorrect')
       }
