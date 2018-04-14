@@ -171,6 +171,14 @@ function recipe(req, res, next) {
   }
 }
 
+function profile(req, res) {
+  var data = (
+    FirstName = req.body.FirstName,
+    Details = req.body.Details
+  )
+  res.render('user/profile', {data, User: req.session.user})
+}
+
 function notFound(req, res) {
   res.status(404).render('errors/error')
 }
