@@ -158,7 +158,7 @@ function recipes(req, res, next) {
 function recipe(req, res, next) {
   var id = req.params.id
 
-  connection.query('SELECT * FROM recipe WHERE id = ?', id, done)
+  connection.query('SELECT * FROM recipe WHERE ID = ?', id, done)
 
   function done(err, data) {
     if (err) {
@@ -166,17 +166,17 @@ function recipe(req, res, next) {
     } else if (data.length === 0) {
       next()
     } else {
-      res.render('user/detail', {data: data[0], User: req.session.User})
+      res.render('user/detail', {data: data[0]})
     }
   }
 }
 
 function profile(req, res) {
-  var data = (
-    FirstName = req.body.FirstName,
-    Details = req.body.Details
-  )
-  res.render('user/profile', {data, User: req.session.user})
+  // var data = (
+  //   FirstName = req.body.FirstName,
+  //   Details = req.body.Details
+  // )
+  // res.render('user/profile', {data, data[0], User: req.session.user})
 }
 
 function notFound(req, res) {
