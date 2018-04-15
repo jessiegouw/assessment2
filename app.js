@@ -24,7 +24,7 @@ connection.connect(function(err) {
   console.log('Connection established')
 })
 
-var upload = multer({dest: 'static/upload/'})
+var upload = multer({dest: 'public/upload/'})
 
 express()
   .use(express.static('static'))
