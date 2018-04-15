@@ -42,10 +42,12 @@ express()
   .get('/register', registerForm)
   .post('/register', register)
   .get('/login', loginForm)
-  .post('/recipes', login)
   .get('/logout', logout)
   .get('/recipes', recipes)
+  .post('/recipes', login)
   .get('/:id', recipe)
+  .get('/add', addForm)
+  .post('/recipes', addRecipe)
   .get('/profile', profile)
   .set('trust proxy', 1) // trust first proxy
   .use(notFound)
@@ -167,6 +169,28 @@ function recipe(req, res, next) {
       next()
     } else {
       res.render('user/detail', {data: data[0]})
+    }
+  }
+}
+
+function addForm(req, res) {
+  res.render('user/add')
+}
+
+function addRecipe(req, res, next) {
+  connection.query('INSERT INTO recipe SET ?', {
+    cover: req.file ? req.file.filename : null,
+    Name: req.body.Name,
+    Description: req.body.Description,
+    Ingredients: req.body.Ingredients,
+    Instructions: req.body.Instructions
+  }, done)
+
+  function done(err, data) {
+    if (err) {
+      next(err)
+    } else {
+      res.redirect('/' + data.insertId)
     }
   }
 }
