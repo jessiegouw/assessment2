@@ -1,3 +1,12 @@
+// Small screens
+$screen-sm-max: 514px;
+
+@mixin sm {
+   @media (max-width: #{$screen-sm-max}) {
+       @content;
+   }
+}
+
 body {
   font-family: 'Open Sans', sans-serif;
   max-width: 85vw;
@@ -8,6 +17,9 @@ h1 a {
   font-family: 'Chalkduster', sans-serif;
   text-decoration: none;
   color: rgba(5, 196, 107,1.0);
+  @include sm {
+    font-size: 0.5em;
+  }
 }
 
 header {
@@ -105,5 +117,14 @@ section {
   }
   p {
     margin: 0 0 0.1em 0;
+  }
+}
+
+#recipe {
+  h1,h3 {
+    margin: 1em 0 0 0;
+  }
+  p {
+    margin: 0 1em 0 0;
   }
 }
