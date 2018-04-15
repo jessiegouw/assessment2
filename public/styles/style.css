@@ -4,7 +4,7 @@ body {
   margin: 0 auto; }
 
 h1 a {
-  font-family: 'Chalkduster', sans-serif;
+  font-family: 'Cabin Sketch', cursive;
   text-decoration: none;
   color: #05c46b; }
   @media (max-width: 514px) {
@@ -79,7 +79,7 @@ section {
   padding: 1em;
   box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12); }
   section h2 {
-    font-family: 'Chalkduster', sans-serif;
+    font-family: 'Cabin Sketch', cursive;
     margin: 0.3em 0 0.1em 0; }
   section a {
     color: black;
