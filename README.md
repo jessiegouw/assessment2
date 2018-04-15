@@ -88,8 +88,9 @@ The reason that I used MySQL as an open source database manager is because I fee
 ## Checklist
 - [x] Sign up
 - [ ] Delete account
-- [ ] Log in/out
+- [x] Log in/out
 - [ ] Being logged in/out
+- [x] Look on detail page of a recipe
 - [ ] Update profile, for example update profile picture or bio
 - [ ] Being able to post recipes on your own profile
 - [ ] Being able to react on recipes of other users
