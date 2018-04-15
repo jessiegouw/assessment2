@@ -108,6 +108,7 @@ The reason that I used MySQL as an open source database manager is because I fee
 * [`mysql-server example`](https://github.com/cmda-be/course-17-18/tree/master/examples/mysql-server)
 * [`Auth Server`](https://github.com/cmda-be/course-17-18/tree/master/examples/auth-server)
 * [`How do Express.js Sessions work?`](https://nodewebapps.com/2017/06/18/how-do-nodejs-sessions-work/)
+* [`Google Fonts`](https://fonts.google.com/specimen/Open+Sans?selection.family=Cabin+Sketch|Open+Sans:400,700)
 
 ### Troubleshooting
 * [`MySQL commands`](https://gist.github.com/hofmannsven/9164408)
