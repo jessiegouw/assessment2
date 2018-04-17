@@ -30,14 +30,14 @@ express()
   .use(express.static('static'))
   .use(express.static(__dirname + '/public'))
   .use(bodyParser.urlencoded({extended: true}))
-  .set('view engine', 'ejs')
-  .set('views', 'view')
   .use(session({
-    secret: 'keyboard cat',
+    secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: true,
     cookie: { secure: true }
   }))
+  .set('view engine', 'ejs')
+  .set('views', 'view')
   .get('/', home)
   .get('/register', registerForm)
   .post('/register', register)
