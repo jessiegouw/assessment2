@@ -100,6 +100,7 @@ The reason that I used MySQL as an open source database manager is because I fee
 * `npm run watch` -- Starts the server with Nodemon
 * `npm test` -- Runs unit tests
 * `npm run sass` -- Open new tab in terminal to edit style.scss file
+* `npm run lint` -- Runs linter for consistent code
 
 ## Database structure
 ![db_structure](https://github.com/jessiegouw/be-assessment-2/blob/master/dbstructure.png)
