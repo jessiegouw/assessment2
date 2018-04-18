@@ -27,29 +27,30 @@ connection.connect(function(err) {
 var upload = multer({dest: 'public/upload/'})
 
 express()
-  .use(express.static('static'))
+  .use(express.static('public'))
   .use(express.static(__dirname + '/public'))
   .use(bodyParser.urlencoded({extended: true}))
+  .set('trust proxy', 1) // trust first proxy
   .use(session({
     secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: true,
-    cookie: { secure: true }
+    // cookie: { secure: true }
   }))
   .set('view engine', 'ejs')
   .set('views', 'view')
   .get('/', home)
+  .get('/recipes', recipes)
+  .post('/recipes', upload.single('Cover'), addRecipe)
+  .get('/add', addForm)
+  .get('/:id', recipe)
+  .get('/profile', profile)
   .get('/register', registerForm)
   .post('/register', register)
   .get('/login', loginForm)
-  .get('/logout', logout)
-  .get('/recipes', recipes)
+  .post('/login', login)
   .post('/recipes', login)
-  .get('/:id', recipe)
-  .get('/add', addForm)
-  .post('/recipes', addRecipe)
-  .get('/profile', profile)
-  .set('trust proxy', 1) // trust first proxy
+  .get('/logout', logout)
   .use(notFound)
   .listen(8000, console.log('Ya servah runs 🔥'))
 
@@ -143,6 +144,7 @@ function logout(req, res) {
   req.session.destroy()
   // Redirect to index page
   res.redirect('/')
+  console.log('destroyed')
 }
 
 function recipes(req, res, next) {
@@ -178,12 +180,20 @@ function addForm(req, res) {
 }
 
 function addRecipe(req, res, next) {
+  // var  Name = req.body.Name
+  // var  Description = req.body.Description
+  // var  Ingredients = req.body.Ingredients
+  // var  Instructions = req.body.Instructions
+  // var  Cover = req.body.Cover
+  //
+  // connection.query('SELECT * FROM recipe WHERE Name = ?', Name, done)
+
   connection.query('INSERT INTO recipe SET ?', {
-    cover: req.file ? req.file.filename : null,
     Name: req.body.Name,
     Description: req.body.Description,
     Ingredients: req.body.Ingredients,
-    Instructions: req.body.Instructions
+    Instructions: req.body.Instructions,
+    Cover: req.file ? req.file.filename : null
   }, done)
 
   function done(err, data) {
