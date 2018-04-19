@@ -9,7 +9,7 @@ h1 a {
   color: #05c46b; }
   @media (max-width: 514px) {
     h1 a {
-      font-size: 0.5em; } }
+      font-size: 0.8em; } }
 
 header {
   display: flex; }
@@ -91,5 +91,11 @@ section {
   margin: 1em 0 0 0; }
 #recipe p {
   margin: 0 1em 0 0; }
+#recipe img {
+  width: 70%;
+  height: auto; }
+  @media (max-width: 514px) {
+    #recipe img {
+      width: 100%; } }
 
 /*# sourceMappingURL=style.css.map */

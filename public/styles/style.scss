@@ -18,7 +18,7 @@ h1 a {
   text-decoration: none;
   color: rgba(5, 196, 107,1.0);
   @include sm {
-    font-size: 0.5em;
+    font-size: 0.8em;
   }
 }
 
@@ -127,5 +127,12 @@ section {
   }
   p {
     margin: 0 1em 0 0;
+  }
+  img {
+    width: 70%;
+    height: auto;
+    @include sm {
+      width: 100%;
+    }
   }
 }
