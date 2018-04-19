@@ -13,10 +13,16 @@
 
 <main id="recipe">
 
+  <% if (data.cover) { %>
+  <img alt src="/upload/<%= data.cover %>">
+  <% } %>
+
   <h1><%= data.Name %></h1>
   <footer><%= data.Description %></footer>
+
   <h3>Ingredients</h3>
   <p><%= data.Ingredients %></p>
+
   <h3>Instructions</h3>
   <p><%= data.Instructions %></p>
 
