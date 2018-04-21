@@ -49,7 +49,6 @@ express()
   .post('/register', register)
   .get('/login', loginForm)
   .post('/login', login)
-  .post('/recipes', login)
   .get('/logout', logout)
   .use(notFound)
   .listen(8000, console.log('Ya servah runs 🔥'))
@@ -114,24 +113,24 @@ function login(req, res, next) {
   var Username = req.body.Username
   var Password = req.body.Password
 
-  connection.query('SELECT * FROM User WHERE Username = ?', Username, done)
+  connection.query('SELECT * FROM user WHERE Username = ?', Username, done)
 
   function done(err, data) {
-    var User = data && data[0]
+    var user = data && data[0]
 
     if (err) {
       next(err)
-    } else if (User) {
-      console.log(User)
-      argon2.verify(User.Password, Password).then(onverify, next)
+    } else if (user) {
+      console.log(user)
+      argon2.verify(user.Password, Password).then(onverify, next)
     } else {
       res.status(401).send('Username does not exist')
     }
 
     function onverify(match) {
       if (match) {
-        req.session.user = {Username: User.Username}
-        res.redirect('recipes')
+        req.session.user = {Username: user.Username}
+        res.redirect('/recipes')
       } else {
         res.status(401).send('Password incorrect')
       }
@@ -180,13 +179,6 @@ function addForm(req, res) {
 }
 
 function addRecipe(req, res, next) {
-  // var  Name = req.body.Name
-  // var  Description = req.body.Description
-  // var  Ingredients = req.body.Ingredients
-  // var  Instructions = req.body.Instructions
-  // var  Cover = req.body.Cover
-  //
-  // connection.query('SELECT * FROM recipe WHERE Name = ?', Name, done)
 
   connection.query('INSERT INTO recipe SET ?', {
     Name: req.body.Name,
