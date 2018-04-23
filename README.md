@@ -89,9 +89,10 @@ The reason that I used MySQL as an open source database manager is because I fee
 - [x] Sign up
 - [ ] Delete account
 - [x] Log in/out
-- [ ] Being logged in/out
+- [x] Being logged in/out
 - [x] Look on detail page of a recipe
 - [ ] Update profile, for example update profile picture or bio
+- [x] Being able to post recipes
 - [ ] Being able to post recipes on your own profile
 - [ ] Being able to react on recipes of other users
 
