@@ -12,10 +12,11 @@
 </header>
 
 <main id="recipe">
-
-  <% if (data.cover) { %>
-  <img alt src="/upload/<%= data.cover %>">
-  <% } %>
+  <section>
+    <% if (data.cover) { %>
+    <img alt src="/upload/<%= data.cover %>">
+    <% } %>
+  </section>
 
   <h1><%= data.Name %></h1>
   <footer><%= data.Description %></footer>
