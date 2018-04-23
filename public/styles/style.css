@@ -75,18 +75,18 @@ form {
   .account:hover {
     text-decoration: underline; }
 
-#recipes section {
+#recipes article {
   margin: 2em 0 2em 0;
   background-color: #fbedac;
   padding: 1em;
   box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12); }
-  #recipes section h2 {
+  #recipes article h2 {
     font-family: 'Cabin Sketch', cursive;
     margin: 0.3em 0 0.1em 0; }
-  #recipes section a {
+  #recipes article a {
     color: black;
     text-decoration: none; }
-  #recipes section p {
+  #recipes article p {
     margin: 0 0 0.1em 0; }
 
 #recipe {
