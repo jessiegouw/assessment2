@@ -19,10 +19,10 @@
   <a href="/add">Add Recipe</a>
 
   <% for (var index = 0; index < data.length; index++) { %>
-  <section>
+  <article>
     <h2><a href="/<%= data[index].ID %>"><%= data[index].Name %></a></h2>
     <p><%= data[index].Description %></p>
-  </section>
+  </article>
   <% } %>
 
 </main>
