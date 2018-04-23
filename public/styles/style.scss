@@ -53,12 +53,13 @@ form {
   padding: 1em;
   border: rgba(206, 214, 224,1.0) solid 0.001em;
   max-width: 25em;
+  background-color: rgba(241, 242, 246,0.6);
+  border: none;
   fieldset {
     border: none;
     legend {
       padding-left: 0;
       font-weight: bold;
-      color: rgba(59, 59, 152,1.0);
       margin-bottom: 1em;
     }
     label {
@@ -70,6 +71,7 @@ form {
       font-size: 12pt;
       transition-duration: 400ms;
       border: rgba(206, 214, 224,1.0) solid 0.001em;
+      border-radius: 4px;
       &:focus {
         outline: none;
         border: deeppink solid 0.001em;
@@ -102,25 +104,33 @@ form {
   }
 }
 
-section {
-  margin: 2em 0 2em 0;
-  background-color: rgba(251, 237, 172, 1);
-  padding: 1em;
-  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
-  h2 {
-    font-family: 'Cabin Sketch', cursive;
-    margin: 0.3em 0 0.1em 0;
-  }
-  a {
-    color: black;
-    text-decoration: none;
-  }
-  p {
-    margin: 0 0 0.1em 0;
+#recipes {
+  section {
+    margin: 2em 0 2em 0;
+    background-color: rgba(251, 237, 172, 1);
+    padding: 1em;
+    box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+    h2 {
+      font-family: 'Cabin Sketch', cursive;
+      margin: 0.3em 0 0.1em 0;
+    }
+    a {
+      color: black;
+      text-decoration: none;
+    }
+    p {
+      margin: 0 0 0.1em 0;
+    }
   }
 }
 
 #recipe {
+  margin: 0 auto;
+  max-width: 25em;
+  background-color: rgba(5, 196, 107,1.0);
+  color: white;
+  padding: 1em;
+  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
   h1,h3 {
     // font-weight: bold;
     margin: 1em 0 0 0;
@@ -128,11 +138,11 @@ section {
   p {
     margin: 0 1em 0 0;
   }
-  img {
-    width: 70%;
-    height: auto;
-    @include sm {
+  section {
+    img {
+      background: cover;
       width: 100%;
+      height: auto;
     }
   }
 }

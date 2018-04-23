@@ -35,13 +35,14 @@ nav {
 form {
   padding: 1em;
   border: #ced6e0 solid 0.001em;
-  max-width: 25em; }
+  max-width: 25em;
+  background-color: rgba(241, 242, 246, 0.6);
+  border: none; }
   form fieldset {
     border: none; }
     form fieldset legend {
       padding-left: 0;
       font-weight: bold;
-      color: #3b3b98;
       margin-bottom: 1em; }
     form fieldset input, form fieldset textarea {
       margin: 0 0 1em 0;
@@ -49,7 +50,8 @@ form {
       padding: 0.7em;
       font-size: 12pt;
       transition-duration: 400ms;
-      border: #ced6e0 solid 0.001em; }
+      border: #ced6e0 solid 0.001em;
+      border-radius: 4px; }
       form fieldset input:focus, form fieldset textarea:focus {
         outline: none;
         border: deeppink solid 0.001em; }
@@ -73,29 +75,34 @@ form {
   .account:hover {
     text-decoration: underline; }
 
-section {
+#recipes section {
   margin: 2em 0 2em 0;
   background-color: #fbedac;
   padding: 1em;
   box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12); }
-  section h2 {
+  #recipes section h2 {
     font-family: 'Cabin Sketch', cursive;
     margin: 0.3em 0 0.1em 0; }
-  section a {
+  #recipes section a {
     color: black;
     text-decoration: none; }
-  section p {
+  #recipes section p {
     margin: 0 0 0.1em 0; }
 
-#recipe h1, #recipe h3 {
-  margin: 1em 0 0 0; }
-#recipe p {
-  margin: 0 1em 0 0; }
-#recipe img {
-  width: 70%;
-  height: auto; }
-  @media (max-width: 514px) {
-    #recipe img {
-      width: 100%; } }
+#recipe {
+  margin: 0 auto;
+  max-width: 25em;
+  background-color: #05c46b;
+  color: white;
+  padding: 1em;
+  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12); }
+  #recipe h1, #recipe h3 {
+    margin: 1em 0 0 0; }
+  #recipe p {
+    margin: 0 1em 0 0; }
+  #recipe section img {
+    background: cover;
+    width: 100%;
+    height: auto; }
 
 /*# sourceMappingURL=style.css.map */
