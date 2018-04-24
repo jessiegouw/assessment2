@@ -1,4 +1,4 @@
-// 'use strict'
+'use strict'
 
 var express = require('express')
 var session = require('express-session')
@@ -35,7 +35,7 @@ express()
     secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: true,
-    // cookie: { secure: true }
+    cookie: { secure: true }
   }))
   .set('view engine', 'ejs')
   .set('views', 'view')
