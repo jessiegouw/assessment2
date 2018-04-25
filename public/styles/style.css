@@ -75,11 +75,25 @@ form {
   .account:hover {
     text-decoration: underline; }
 
+#recipes h1 {
+  margin: 0; }
+#recipes footer {
+  margin: 0 0 2em 0; }
+#recipes .button {
+  margin: 10em 0 0 0;
+  padding: 0.6em;
+  background-color: deeppink;
+  color: white;
+  font-weight: bold;
+  text-decoration: none; }
 #recipes article {
   margin: 2em 0 2em 0;
   background-color: #fbedac;
   padding: 1em;
-  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12); }
+  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+  transition-duration: 500ms; }
+  #recipes article:hover {
+    background-color: #feba76; }
   #recipes article h2 {
     font-family: 'Cabin Sketch', cursive;
     margin: 0.3em 0 0.1em 0; }
