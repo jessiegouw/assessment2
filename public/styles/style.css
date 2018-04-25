@@ -110,6 +110,7 @@ form {
     margin: 0 0 0.1em 0; }
 
 #recipe {
+  margin: 0 0 2em 0;
   max-width: 25em;
   background-color: #05c46b;
   color: white;
