@@ -6,6 +6,7 @@ var bodyParser = require('body-parser')
 var mysql = require('mysql')
 var multer = require('multer')
 var argon2 = require('argon2')
+var helmet = require('helmet')
 
 require('dotenv').config()
 
@@ -25,6 +26,13 @@ connection.connect(function(err) {
 })
 
 var upload = multer({dest: 'public/upload/'})
+
+helmet()
+  .use(helmet({
+    frameguard: {
+      action: 'deny'
+    }
+  }))
 
 express()
   .use(express.static('public'))
