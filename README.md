@@ -80,6 +80,7 @@ npm start
 * [`mysql`](https://www.npmjs.com/package/mysql)
 * [`argon2`](https://www.npmjs.com/package/argon2)
 * [`multer`](https://www.npmjs.com/package/multer)
+* [`helmet`]()
 
 The reason that I used [`Express`](https://www.npmjs.com/package/express) as a framework is because it has the biggest community. When you are troubleshooting, chances are big that alot of other people have stumbled on the same problem and probably have solutions for it.
 
@@ -111,6 +112,7 @@ The reason that I used MySQL as an open source database manager is because I fee
 * [`Auth Server`](https://github.com/cmda-be/course-17-18/tree/master/examples/auth-server)
 * [`How do Express.js Sessions work?`](https://nodewebapps.com/2017/06/18/how-do-nodejs-sessions-work/)
 * [`Google Fonts`](https://fonts.google.com/specimen/Open+Sans?selection.family=Cabin+Sketch|Open+Sans:400,700)
+* [`Express Tutorial Part 7: Deploying to production`](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/deployment)
 
 ### Troubleshooting
 * [`MySQL commands`](https://gist.github.com/hofmannsven/9164408)
