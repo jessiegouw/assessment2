@@ -27,13 +27,6 @@ connection.connect(function(err) {
 
 var upload = multer({dest: 'public/upload/'})
 
-helmet()
-  .use(helmet({
-    frameguard: {
-      action: 'deny'
-    }
-  }))
-
 express()
   .use(express.static('public'))
   .use(express.static(__dirname + '/public'))
