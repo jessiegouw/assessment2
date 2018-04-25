@@ -38,7 +38,8 @@ form {
   border: #ced6e0 solid 0.001em;
   max-width: 25em;
   background-color: rgba(241, 242, 246, 0.6);
-  border: none; }
+  border: none;
+  margin: 0 0 2em 0; }
   form fieldset {
     border: none; }
     form fieldset legend {
