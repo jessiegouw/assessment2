@@ -28,6 +28,7 @@ connection.connect(function(err) {
 var upload = multer({dest: 'public/upload/'})
 
 express()
+  .use(helmet())
   .use(express.static('public'))
   .use(express.static(__dirname + '/public'))
   .use(bodyParser.urlencoded({extended: true}))
