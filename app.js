@@ -7,6 +7,7 @@ var mysql = require('mysql')
 var multer = require('multer')
 var argon2 = require('argon2')
 var helmet = require('helmet')
+var compression = require('compression')
 
 require('dotenv').config()
 
@@ -29,6 +30,7 @@ var upload = multer({dest: 'public/upload/'})
 
 express()
   .use(helmet())
+  .use(compression())
   .use(express.static('public'))
   .use(express.static(__dirname + '/public'))
   .use(bodyParser.urlencoded({extended: true}))
