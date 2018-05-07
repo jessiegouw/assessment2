@@ -202,11 +202,7 @@ function addRecipe(req, res, next) {
 }
 
 function profile(req, res) {
-  // var data = (
-  //   FirstName = req.body.FirstName,
-  //   Details = req.body.Details
-  // )
-  // res.render('user/profile', {data, data[0], User: req.session.user})
+  res.render('user/profile')
 }
 
 function notFound(req, res) {
