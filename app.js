@@ -201,19 +201,6 @@ function addRecipe(req, res, next) {
   }
 }
 
-function profile(req, res, next) {
-  connection.query('SELECT * FROM user', done)
-
-  function done(err, data) {
-    if (err) {
-      next(err)
-    } else {
-      res.render('user/profile', {data: data,
-        FirstName: req.session.user})
-    }
-  }
-}
-
 function notFound(req, res) {
   res.status(404).render('errors/error')
 }
