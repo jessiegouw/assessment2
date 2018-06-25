@@ -18,8 +18,8 @@ var connection = mysql.createConnection({
   database: process.env.DB_NAME
 })
 
-connection.connect(function(err) {
-  if(err) {
+connection.connect(function (err) {
+  if (err) {
     console.log('Error connecting to Db')
     return
   }
@@ -56,15 +56,15 @@ express()
   .use(notFound)
   .listen(8000, console.log('Ya servah runs 🔥'))
 
-function home(req, res) {
+function home (req, res) {
   res.render('index')
 }
 
-function registerForm(req, res) {
+function registerForm (req, res) {
   res.render('user/register')
 }
 
-function register(req, res, next) {
+function register (req, res, next) {
   var FirstName = req.body.FirstName
   var LastName = req.body.LastName
   var Username = req.body.Username
@@ -73,7 +73,7 @@ function register(req, res, next) {
 
   connection.query('SELECT * FROM User WHERE Username = ?', Username, done)
 
-  function done(err, data) {
+  function done (err, data) {
     if (err) {
       next(err)
     } else if (data.length === 0) {
@@ -83,12 +83,11 @@ function register(req, res, next) {
     }
   }
 
-  if (req.body.Password != req.body.Password2) {
+  if (req.body.Password !== req.body.Password2) {
     res.send('Your password does not match')
-    return
   }
 
-  function addUser(Password) {
+  function addUser (Password) {
     connection.query('INSERT INTO User SET ?', {
       FirstName: FirstName,
       LastName: LastName,
@@ -97,7 +96,7 @@ function register(req, res, next) {
       Details: Details
     }, errorCheck)
 
-    function errorCheck(err) {
+    function errorCheck (err) {
       if (err) {
         next(err)
       } else {
@@ -108,17 +107,17 @@ function register(req, res, next) {
   }
 }
 
-function loginForm(req, res) {
+function loginForm (req, res) {
   res.render('user/login')
 }
 
-function login(req, res, next) {
+function login (req, res, next) {
   var Username = req.body.Username
   var Password = req.body.Password
 
   connection.query('SELECT * FROM user WHERE Username = ?', Username, done)
 
-  function done(err, data) {
+  function done (err, data) {
     var user = data && data[0]
 
     if (err) {
@@ -130,7 +129,7 @@ function login(req, res, next) {
       res.status(401).send('Username does not exist')
     }
 
-    function onverify(match) {
+    function onverify (match) {
       if (match) {
         req.session.user = {Username: user.Username}
         res.redirect('/recipes')
@@ -141,7 +140,7 @@ function login(req, res, next) {
   }
 }
 
-function logout(req, res) {
+function logout (req, res) {
   // Destroy the session
   req.session.destroy()
   // Redirect to index page
@@ -149,10 +148,10 @@ function logout(req, res) {
   console.log('destroyed')
 }
 
-function recipes(req, res, next) {
+function recipes (req, res, next) {
   connection.query('SELECT * FROM recipe', done)
 
-  function done(err, data) {
+  function done (err, data) {
     if (err) {
       next(err)
     } else {
@@ -161,12 +160,12 @@ function recipes(req, res, next) {
   }
 }
 
-function recipe(req, res, next) {
+function recipe (req, res, next) {
   var id = req.params.id
 
   connection.query('SELECT * FROM recipe WHERE ID = ?', id, done)
 
-  function done(err, data) {
+  function done (err, data) {
     if (err) {
       next(err)
     } else if (data.length === 0) {
@@ -177,12 +176,11 @@ function recipe(req, res, next) {
   }
 }
 
-function addForm(req, res) {
+function addForm (req, res) {
   res.render('user/add')
 }
 
-function addRecipe(req, res, next) {
-
+function addRecipe (req, res, next) {
   connection.query('INSERT INTO recipe SET ?', {
     Name: req.body.Name,
     Description: req.body.Description,
@@ -191,7 +189,7 @@ function addRecipe(req, res, next) {
     Cover: req.file ? req.file.filename : null
   }, done)
 
-  function done(err, data) {
+  function done (err, data) {
     if (err) {
       next(err)
     } else {
@@ -200,6 +198,6 @@ function addRecipe(req, res, next) {
   }
 }
 
-function notFound(req, res) {
+function notFound (req, res) {
   res.status(404).render('errors/error')
 }
