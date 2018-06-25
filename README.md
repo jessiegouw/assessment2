@@ -101,7 +101,7 @@ The reason that I used [`mysql`](https://www.npmjs.com/package/mysql) as an open
 * `npm start` -- Starts the server (port:8000)
 * `npm run watch` -- Starts the server with Nodemon
 * `npm test` -- Runs unit tests
-* `npm run sass` -- Open new tab in terminal to edit style.scss file
+* `npm run sass` -- Open a new tab in terminal and run this command to edit style.scss file
 * `npm run lint` -- Runs linter for consistent code
 
 ## Database structure
