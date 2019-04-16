@@ -25,6 +25,7 @@
     "argon2": "^0.17.3",
     "body-parser": "^1.18.2",
     "compression": "^1.7.2",
+    "deep-extend": "^0.6.0",
     "dotenv": "^5.0.1",
     "ejs": "^2.5.8",
     "express": "^4.16.3",
